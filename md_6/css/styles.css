@@ -1,0 +1,206 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+main {
+  overflow: hidden;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+
+/* Header */
+
+.logo {
+  font-size: 60px;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  background: yellow;
+  /* flex-wrap: wrap;
+  flex-direction: row; */
+  /* flex-flow: row wrap; */
+}
+
+.nav__items {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  width: 600px;
+  background: sandybrown;
+}
+
+/* Team list */
+
+.team__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.team__item {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: 1.7s ease-in-out;
+}
+
+.team__item:hover {
+  transform: scale(1.1) rotateY(-720deg) rotate(30deg);
+}
+
+.team__item:not(:nth-last-of-type(-n + 3)) {
+  margin-bottom: 60px;
+}
+
+
+.team__list--column {
+  flex-direction: column;
+  align-items: center;
+  height: 740px;
+}
+
+.team__list--column .team__item:not(:nth-last-of-type(-n + 3)) {
+  margin-bottom: 0;
+}
+
+/* Flex boxes */
+
+.flex__boxes {
+  display: flex;
+}
+
+.flex__box {
+  border: 2px solid cyan;
+  list-style: none;
+  width: 300px;
+  /* flex-basis: 300px; */
+  height: 300px;
+  background: yellow;
+}
+
+.flex__box:nth-of-type(1) {
+  flex-grow: 1;
+  flex-shrink: 5;
+  order: 2;
+}
+.flex__box:nth-of-type(2) {
+  flex-grow: 5;
+  flex-shrink: 1;
+  order: 1;
+}
+.flex__box:nth-of-type(3) {
+  flex-grow: 1;
+  flex-shrink: 5;
+  order: 1;
+}
+
+
+/* 
+  Rocket 
+*/
+
+.rocket__wrapper {
+  background: url(../img/rocket.png) no-repeat center;
+  background-size: contain;
+  height: 200px;
+  width: 200px;
+  position: fixed;
+  bottom: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 222;
+  animation: rocket 8s;
+  animation-fill-mode: forwards;
+}
+
+.rocket__ranger {
+  background: url(../img/avatar.png) no-repeat center;
+  background-size: cover;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 52px;
+}
+
+
+@keyframes rocket {
+  0% {
+    transform: translateX(-50%);
+  }
+
+  5% {
+    transform: translate(-50%, -50px);
+  }
+
+  6% {
+    transform: translate(-50%, -50px) rotate(7deg);
+  }
+
+  7% {
+    transform: translate(-50%, -50px) rotate(0);
+  }
+
+  8% {
+    transform: translate(-50%, -50px) rotate(-7deg);
+  }
+
+  9% {
+    transform: translate(-50%, -50px) rotate(0);
+  }
+
+  10% {
+    transform: translate(-50%, -50px) rotate(7deg);
+  }
+
+  11% {
+    transform: translate(-50%, -50px) rotate(0);
+  }
+  
+  12% {
+    transform: translate(-50%, -50px) rotate(-7deg);
+  }
+  
+  13% {
+    transform: translate(-50%, -50px) rotate(0);
+  }
+
+  14% {
+    transform: translate(-50%, -50px) rotate(7deg);
+  }
+
+  15% {
+    transform: translate(-50%, -50px) rotate(0);
+  }
+
+  30% {
+    transform: translate(-50%, -50px) rotate(45deg);
+  }
+
+  40% {
+    transform: translate(-50%, -50px) rotate(45deg) rotateY(600deg);
+  }
+
+  100% {
+    transform: translate(28000px, -20000px) rotateY(0);
+  }
+
+}
