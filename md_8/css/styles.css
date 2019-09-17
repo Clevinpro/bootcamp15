@@ -1,0 +1,157 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.container {
+  max-width: 1008px;
+  margin: 0 auto;
+}
+
+/* 
+  Header
+*/
+
+.header {
+  box-shadow: 0 3px 6px rgba(0,0,0,0.09), 0 3px 6px rgba(0,0,0,0.16);
+}
+
+.logo {
+  width: 68px;
+  display: block;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-basis: 861px;
+  list-style: none;
+}
+
+.nav__link {
+  text-decoration: none;
+  font-size: 14px;
+  color: grey;
+  padding: 20px 0 24px;
+  display: block;
+  border-bottom: 1px solid transparent;
+}
+
+.nav__link:hover {
+  border-bottom: 1px solid green;
+}
+
+
+/* 
+  Categories
+*/
+
+.categories-section {
+  padding: 42px 0 75px;
+}
+
+.categories__list {
+  padding: 0 44px;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.categories__item {
+  width: 294px;
+  padding: 11px 11px 25px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  margin-bottom: 21px;
+}
+
+.categories__img {
+  margin-bottom: 24px;
+}
+
+.categories__name {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  display: block;
+}
+
+.categories__item--double {
+  width: 608px;
+}
+
+
+/* 
+  Media
+*/
+
+@media (max-width: 1023px) {
+  /* 
+    Header
+  */
+
+  .navigation {
+    height: 63px;
+    padding: 0 10px;
+    
+  }
+
+  .nav {
+    position: fixed;
+    right: 0;
+    top: 64px;
+    flex-direction: column;
+    background: #fff;
+    text-align: center;
+    padding: 40px 20px;
+    height: calc(100% - 63px);
+    transform: translateX(100%);
+  }
+  /* transition: .4s ease-in-out; */
+
+
+  /* 
+    Categories Section
+  */
+
+  .categories__list {
+    max-width: 628px;
+    padding: 0 10px;
+  }
+
+}
+
+
+@media (max-width: 767px) {
+  /* 
+    Categories Section
+  */
+
+  .categories__list {
+    max-width: 314px;
+  }
+
+  .categories__item--double {
+    width: 294px;
+  }
+
+}
