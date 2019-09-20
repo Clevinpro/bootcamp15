@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+.svg {
+  width: 30px;
+  height: 30px;
+  transition: .3s ease-in-out;
+  cursor: pointer;
+}
+
+.svg:hover {
+  fill: cyan;
+}
+
+.svg-insta path:nth-of-type(1) {
+  fill: green;
+}
+
+
+.svg-insta path:nth-of-type(2) {
+  fill: yellow;
+}
+
+
+.svg-insta path:nth-of-type(3) {
+  fill: purple;
+}
+
+.svg-wrapper {
+  width: 30px;
+  height: 30px;
+  fill: green !important;
+}
+
+.svg-wrapper:hover svg {
+  fill: green !important;
+}
+
+.svg-wrapper svg {
+  fill: green !important; 
+}

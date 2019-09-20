@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Module 9</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap&subset=cyrillic" rel="stylesheet">
+  <link rel="stylesheet" href="./css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <nav class="row nav justify-content-between align-items-center">
+        <div class="col-6 d-flex align-items-center">
+          <button class="back"></button>
+          <a href="" class="logo">
+            <img class="logo__img" src="./img/logo.png" alt="">
+          </a>
+        </div>
+        <div class="col-5 cart d-flex align-items-center justify-content-end">
+          <button class="cart__control">
+            10
+          </button>
+          <span class="cart__sum">12 235 h.</span>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section class="events-section">
+      <ul class="events__list">
+        <!-- li.col-12>img.events__img+h3.events__title+span.events__date+p.events__desc -->
+        <li class="events__item container-fluid">
+          <div class="row no-gutters">
+            <div class="events__first col-md-6">
+              <picture>
+                <source media="(min-width: 768px)" srcset="./img/event_tablet.png">
+                <img src="./img/event.png" alt="" class="events__img">
+              </picture>
+            </div>
+            <div class="events__second col-md-6">
+              <h3 class="events__title">Cocktail Event</h3>
+              <span class="events__date">01.12.2018</span>
+              <p class="events__desc">
+                  При заказе 4-х коктейлей – 5-й Вы
+                  получаете в подарок. С 1 по 30 сентября.
+              </p>
+              <div class="controls__wrapper d-flex justify-content-between align-items-center">
+                <span class="controls__sum">2436 h.</span>
+                <div class="controls__items d-flex align-items-center">
+                  <button class="controls__item controls__decrement">-</button>
+                  <span class="controls__count">0</span>
+                  <button class="controls__item controls__increment">+</button>
+                </div>
+                <button class="controls__buy">Buy</button>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="events__item container-fluid">
+          <div class="row no-gutters">
+            <div class="events__first col-md-6">
+              <picture>
+                <source media="(min-width: 768px)" srcset="./img/event_tablet.png">
+                <img src="./img/event.png" alt="" class="events__img">
+              </picture>
+            </div>
+            <div class="events__second col-md-6">
+              <h3 class="events__title">Cocktail Event</h3>
+              <span class="events__date">01.12.2018</span>
+              <p class="events__desc">
+                  При заказе 4-х коктейлей – 5-й Вы
+                  получаете в подарок. С 1 по 30 сентября.
+              </p>
+              <div class="controls__wrapper d-flex justify-content-between align-items-center">
+                <span class="controls__sum">2436 h.</span>
+                <div class="controls__items d-flex align-items-center">
+                  <button class="controls__item controls__decrement">-</button>
+                  <span class="controls__count">0</span>
+                  <button class="controls__item controls__increment">+</button>
+                </div>
+                <button class="controls__buy">Buy</button>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

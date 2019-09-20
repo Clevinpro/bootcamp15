@@ -15,7 +15,11 @@
     <header class="header">
       <nav class="navigation container">
         <a href="" class="logo">
-          <img src="./img/logo@1X.png" alt="" />
+          <picture>
+            <source media="(min-width: 1024px)" srcset="./img/logoX2@1X.png, ./img/logoX2@2X.png 2x" >
+            <source srcset="./img/logo@1X.png, ./img/logo@2X.png 2x" >
+            <img src="./img/logo@1X.png" alt="" />
+          </picture>
         </a>
         <!-- ul.nav>li.nav__item*6>a.nav__link -->
         <ul class="nav">
