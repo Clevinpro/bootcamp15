@@ -1,0 +1,10 @@
+// $color: green;
+
+@mixin fontMixin($fontSize, $color: green, $lineHeight: 24px) {
+  text-align: center;
+  font-size: $fontSize;
+  color: $color;
+  line-height: $lineHeight;
+}
+
+
