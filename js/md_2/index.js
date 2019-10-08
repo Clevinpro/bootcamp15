@@ -172,27 +172,27 @@
 // )
 
 
-const salary = [1000, 1200, 1200, 1500];
-const currencyUSD = 25;
-const currencyEURO = 28;
+// const salary = [1000, 1200, 1200, 1500];
+// const currencyUSD = 25;
+// const currencyEURO = 28;
 
-function getSalarySum(salaryArr, currencyValue = 25, ...args) {
-  // console.log(arguments);
-  // console.log(Array.from(arguments));
-  console.log('args :', args);
-  let sum = 0;
-  for(const el of salaryArr){
-    sum += el * currencyValue;
-  }
+// function getSalarySum(salaryArr, currencyValue = 25, ...args) {
+//   // console.log(arguments);
+//   // console.log(Array.from(arguments));
+//   console.log('args :', args);
+//   let sum = 0;
+//   for(const el of salaryArr){
+//     sum += el * currencyValue;
+//   }
   
-  return sum;
-}
+//   return sum;
+// }
 
 
-const sumUSD = getSalarySum(salary)
+// const sumUSD = getSalarySum(salary)
 
-console.log(sumUSD);
-console.log(getSalarySum(salary, currencyEURO));
+// console.log(sumUSD);
+// console.log(getSalarySum(salary, currencyEURO));
 
 // const getSalarySum = function() {
 
@@ -251,21 +251,18 @@ console.log(getSalarySum(salary, currencyEURO));
 
 // Вызовы функции для проверки работоспособности твоей реализации.
 
-function checkForSpam(str) {
-  return str.toLowerCase().includes("spam") || str.toLowerCase().includes("sale");
-}
+// function checkForSpam(str) {
+//   return str.toLowerCase().includes("spam") || str.toLowerCase().includes("sale");
+// }
 
 
-console.log(checkForSpam('Latest technology news')); // false
+// console.log(checkForSpam('Latest technology news')); // false
 
-console.log(checkForSpam('JavaScript weekly newsletter')); // false
+// console.log(checkForSpam('JavaScript weekly newsletter')); // false
 
-console.log(checkForSpam('Get best sale offers now!')); // true
+// console.log(checkForSpam('Get best sale offers now!')); // true
 
-console.log(checkForSpam('[SPAM] How to earn fast money?')); // true
-
-
-
+// console.log(checkForSpam('[SPAM] How to earn fast money?')); // true
 
 
 
@@ -276,3 +273,36 @@ console.log(checkForSpam('[SPAM] How to earn fast money?')); // true
 
 
 
+
+
+
+
+
+
+// Задание 3
+// Напиши фукцнию findLongestWord(string), которая принимает параметром
+//  произвольную строку (в строке будут только слова и пробелы) и возвращает
+//  самое длинное слово в этой строке.
+
+// Вызовы функции для проверки работоспособности твоей реализации.
+
+// console.log(findLongestWord('The quick brown fox jumped over the lazy dog')); // 'jumped'
+
+// console.log(findLongestWord('Google do a roll')); // 'Google'
+
+// console.log(findLongestWord('May the force be with you')); // 'force'
+
+
+// const findLongestWord = function(string){
+//   const words = string.split(' ');
+//   let maxWordsLength = '';
+  
+//   for (const word of words ) {
+//     if (word.length > maxWordsLength.length ){
+//       maxWordsLength = word
+//     }
+//   }
+
+//   return maxWordsLength 
+// }
+// console.log(findLongestWord('asd werewrrwer fggfh qweqweq dfg wert'));
