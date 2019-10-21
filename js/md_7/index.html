@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
+  <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
   <main>
@@ -16,7 +17,7 @@
     </form>
     <ul id="contacts"></ul>
   </main>
-  <ul id="categories">
+  <ul  id="categories">
       <li class="item">
         <h2>Животные</h2>
     
@@ -48,6 +49,18 @@
         </ul>
       </li>
     </ul>
+    <ul id="ingredients"></ul>
+    <!-- section.users>h2+ul#users -->
+    <section class="users">
+      <h2>Users</h2>
+      <ul class="users__list" id="users"></ul>
+    </section>
+    <section class="modal__wrapper">
+      <div class="modal">
+        <h2 class="modal__title"></h2>
+        <button class="close">x</button>
+      </div>
+    </section>
   <script type="module" src="./index.js"></script>
 </body>
 </html>

@@ -1,4 +1,5 @@
-// console.log('work');
+console.log('work');
+import users from './users.js';
 
 // const body = document.body;
 // const main = document.querySelector('main');
@@ -106,3 +107,92 @@
 //   console.log('Quantity', el.querySelectorAll("ul > li").length);
 // });
 
+const usersUL = document.getElementById('users');
+
+function renderUsers(arrUsers, ref) {
+  // let acc = '';
+  const markup = arrUsers.reduce((acc, el) => {
+    const li = `
+      <li data-modal="${el.about}" class="users__item">
+        <img class="users__img" src=${el.picture} />
+        <p class="users__name">${el.name}</p>
+        <span class="users__email">${el.email}</span>
+        <button data-action="DEL" class="delete">x</button>
+      </li>
+    `;
+    return acc += li;
+  }, "");
+  console.log('markup______________:', markup);
+  ref.insertAdjacentHTML('beforeend', markup);
+}
+
+
+renderUsers(users, usersUL);
+
+const modalWrapper = document.querySelector('.modal__wrapper');
+const modalTitle = modalWrapper.querySelector('.modal__title');
+// const modalClose = document.querySelector('.close');
+
+modalWrapper.addEventListener('click', function(e) {
+  console.log('e.target', e.target);
+  console.log('e.currentTarget', e.currentTarget);
+  if(
+    e.target.nodeName === 'BUTTON' ||
+    e.target === e.currentTarget
+  ) {
+    modalWrapper.classList.remove('active');
+  } 
+  // else if(e.currentTarget === modalWrapper) {
+  //   modalWrapper.classList.remove('active');
+  // }
+})
+
+usersUL.addEventListener('click', function(e) {
+  // console.log('e.target', e.target);
+  // console.log('e.currentTarget', e.currentTarget);
+  // console.log('e.target.nodeName', e.target.nodeName)
+  // console.log('e.target.parentNode', e.target.parentNode)
+  // console.log(
+  //   'e.target.parentNode.parentNode.classList.contains("users__list")',
+  //    e.target.parentNode.classList.contains("users__list")
+  // )
+  if(
+    e.target.nodeName === "BUTTON" &&
+    e.target.dataset.action === "DEL"
+  ) {
+    console.log(e.target.closest('.users__item'));
+    e.target.closest('.users__item').remove();
+  } else if(e.target !== e.currentTarget) {
+    let description;
+    if(e.target.nodeName !== "LI") {
+      description = e.target
+        .closest('.users__item').dataset.modal;
+    } else {
+      description = e.target.dataset.modal;
+    }
+
+    modalTitle.textContent = description;
+    modalWrapper.classList.add('active');
+  }
+});
+
+
+window.addEventListener('keydown', function(e) {
+  // console.log('e.keyCode', e.keyCode);
+  // console.log('e.keyData', e.key);
+  if(
+    e.keyCode === 27 
+    // && modalWrapper.classList.contains('active')
+  ) {
+    modalWrapper.classList.toggle('active');
+  }
+})
+
+
+// console.log(
+//   usersUL.contains(document.querySelector('.users__item'))
+// );
+
+// console.log(
+//   usersUL.querySelector('.users__item') !== null
+// );
