@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="./node_modules/slick-carousel/slick/slick.css">
+  <link rel="stylesheet" href="./node_modules/slick-carousel/slick/slick-theme.css">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+
+  <!-- https://loremflickr.com/640/360 -->
+  <!-- section.slider__section>h2+div.slider__center>div>img -->
+  <section class="slider__section">
+    <h2>Slick Slider</h2>
+    <div class="slider__center">
+      <div class="slider__item">
+        <img src="https://placeimg.com/640/480/any" width="640" height="360" alt="">
+      </div>
+      <div class="slider__item">
+        <img src="https://placeimg.com/640/482/any" width="640" height="360" alt="">
+      </div>
+      <div class="slider__item">
+        <img src="https://placeimg.com/640/481/any" width="640" height="360" alt="">
+      </div>
+      <div class="slider__item">
+        <img src="https://placeimg.com/640/484/any" width="640" height="360" alt="">
+      </div>
+    </div>
+  </section>
+  <button class="contactus">contact us</button>
+  <div class="modal__form">
+    <form class="modal">
+        <h2>Subm Message</h2>
+      <input class="input" type="email" name="email" placeholder="Email">
+      <input class="input" type="text" name="name" placeholder="Name">
+      <input class="input" type="tel" name="phone" placeholder="Phone">
+      <textarea class="input" name="message" placeholder="Enter your message"></textarea>
+      <button data-action="CLOSE" type="button" class="modal__close">x</button>
+      <button data-action="SUBMIT" type="submit" class="submit">submit</button>
+    </form>
+  </div>
+
+  <script type="module" src="./index.js"></script>
+</body>
+</html>

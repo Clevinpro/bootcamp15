@@ -1,0 +1,93 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+
+.slick-slide {
+  padding: 0 20px;
+}
+
+.slider__section {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.slick-prev {
+  left: 10px;
+}
+
+.slick-next {
+  right: 10px;
+}
+
+.slick-arrow {
+  z-index: 3;
+}
+
+/* 
+  Modal Form
+*/
+
+.modal__form {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, .7);
+  visibility: hidden;
+  opacity: 0;
+  transition: .2s ease-in-out;
+}
+
+.modal__form.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal__form.show .modal {
+  transform: translate(-50%, -50%);
+  transition: .3s ease-in-out .2s;
+}
+
+.modal {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  background: #fff;
+  padding: 70px 40px;
+  transform: translate(-50%, -1110px);
+  max-width: 400px;
+}
+
+.input {
+  background: #000;
+  border: 1px solid #fff;
+  color: #fff;
+  border-radius: 16px;
+  padding: 10px 20px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+::placeholder {
+  color: #fff;
+}
+
+.modal__close {
+  font-size: 20px;
+  color: #000;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  background: none;
+  border: none;
+}
