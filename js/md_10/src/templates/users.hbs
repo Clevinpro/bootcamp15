@@ -1,0 +1,14 @@
+{{#each this}}
+  <div class="user__item">
+    <h1>{{name}}</h1>
+    {{#if age }}
+      {{{age}}}
+    {{/if}}
+    <p class="user__about">
+      {{about}}
+    </p>
+    {{#each friends}}
+      <p>{{name}}</p>
+    {{/each}}
+  </div>
+{{/each}}
