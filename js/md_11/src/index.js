@@ -94,21 +94,21 @@ form.addEventListener('submit', (e) => {
 console.log('clg2');
 console.log('clg3');
 
-const myPromise = new Promise((resolve, reject) => {
-  // if(date === '25.10.2019') {
-  //   setTimeout(() => {
+// const myPromise = new Promise((resolve, reject) => {
+//   // if(date === '25.10.2019') {
+//   //   setTimeout(() => {
 
-  //     resolve("It's true");
-  //   }, 4000);
+//   //     resolve("It's true");
+//   //   }, 4000);
 
-  // } else {
-  //   reject("It's false");
-  // }
-  setTimeout(() => {
-    modalForm.classList.add('show');
-    resolve();
-  }, 4000);
-});
+//   // } else {
+//   //   reject("It's false");
+//   // }
+//   setTimeout(() => {
+//     modalForm.classList.add('show');
+//     resolve();
+//   }, 4000);
+// });
 
 
 function fetch() {
@@ -122,14 +122,14 @@ function fetch() {
 console.log('fetch()', fetch())
 console.log('fetch()', fetch().then(fetchData => console.log('fetchData', fetchData)))
 
-myPromise
-  .then(someData => {
-    // console.log('someData', someData);
-    setTimeout(() => modalForm.classList.remove('show'), 2000);
-    return 10;
-  })
-  .then(newData => console.log('newData', newData))
-  .catch(err => console.log('err', err));
+// myPromise
+//   .then(someData => {
+//     // console.log('someData', someData);
+//     setTimeout(() => modalForm.classList.remove('show'), 2000);
+//     return 10;
+//   })
+//   .then(newData => console.log('newData', newData))
+//   .catch(err => console.log('err', err));
 
 
   // setTimeout(() => {
@@ -137,6 +137,114 @@ myPromise
   // }, 4000);
 
   // setTimeout(() => modalForm.classList.remove('show'), 6000);
+
+
+
+// Дана таблица с числами. По нажатию на кнопку найдите ячейку,
+// в которой хранится максимальное число, и сделайте ее фон красным.
+
+// <table>
+//     <tr>
+//         <td>25</td>
+//         <td>11</td>
+//         <td>8</td>
+//     </tr>
+//     <tr>
+//         <td>54</td>
+//         <td>13</td>
+//         <td>22</td>
+//     </tr>
+//     <tr>
+//         <td>15</td>
+//         <td>23</td>
+//         <td>6</td>
+//     </tr>
+// </table>
+// <button>Жми</button>
+
+const newTable = document.querySelectorAll('td');
+const newButton = document.querySelector('.tableButton');
+console.log(newTable);
+
+let biggerNumber = +newTable[0].textContent;
+let newIndex = 0
+
+newTable.forEach((element, index) => {
+  if( +element.textContent > biggerNumber ){
+    biggerNumber = +element.textContent
+    newIndex = index
+  }
+
+});
+newButton.addEventListener('click',() =>{
+  newTable[newIndex].style.backgroundColor = 'red'
+} )
+
+
+
+
+
+// Даны два селекта. В первом находятся страны,
+// во втором - города. Сделайте так, чтобы когда
+// выбирается определенная страна - в другом селекте
+// появлялись города этой страны. В абзац ниже пишите
+// выбранную страну и город через запятую.
+
+const cityArr = {
+    'aus': ['Мельбурн', 'Сидней', 'Аделаида', 'Брисбен', 'Хобарт'],
+    'jap': ['Токио', 'Киото', 'Осака', 'Иокогама'],
+    'sar': ['Кейптаун', 'Йоханесбург'],
+ }
+
+ const countryNames = {
+  'aus': "Австралия",
+  'jap': "Япония",
+  'sar': "ЮАР",
+}
+
+// <select name="country" id="country">
+//     <option value="aus">Австралия</option>
+//     <option value="jap">Япония</option>
+//     <option value="sar">ЮАР</option>
+// </select>
+
+// <select name="cities" id="cities"></select>
+// <p class="select__result"></p>
+
+const country = document.querySelector('#country');
+const cities = document.querySelector('#cities');
+const selectResult = document.querySelector('.select__result');
+
+let countryValue = country.value;
+
+function renderCities () {
+  let markup = '';
+  cityArr[countryValue].forEach (el => {
+    markup += `<option value=${el}>${el}</option>`;
+  });
+
+  cities.innerHTML = markup;
+}
+
+renderCities ()
+
+country.addEventListener('change', (e) => {
+  countryValue = e.target.value;
+  // let markup = '';
+  // cityArr[countryValue].forEach (el => {
+  //   markup += `<option value=${el}>${el}</option>`;
+  // });
+
+  // cities.innerHTML = markup;
+  renderCities();
+  selectResult.textContent = `${countryNames[countryValue]} ${cities.value}`;
+
+})
+
+cities.addEventListener('change', (e) => {
+  selectResult.textContent = `${countryNames[countryValue]} ${e.target.value}`;
+});
+
 
 
 
