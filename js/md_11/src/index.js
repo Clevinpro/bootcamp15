@@ -244,7 +244,3 @@ country.addEventListener('change', (e) => {
 cities.addEventListener('change', (e) => {
   selectResult.textContent = `${countryNames[countryValue]} ${e.target.value}`;
 });
-
-
-
-
