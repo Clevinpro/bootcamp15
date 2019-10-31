@@ -75,6 +75,8 @@ fetch(`${basicUrl}/todo`)
   })
   .then(() => renderTodo(todoData));
 
+
+// console.log('todoForm.elements.todo', todoForm.elements.todo)
 todoForm.addEventListener('submit', (e) => {
   e.preventDefault();
 
@@ -108,9 +110,57 @@ todoUL.addEventListener('contextmenu', (e) => {
   if(e.target.nodeName === 'LI') {
     const id = e.target.dataset.id;
     console.log('id', id);
-    deleteTodo(id, e.target)
+    deleteTodo(id, e.target);
   }
 });
+
+
+
+todoUL.addEventListener('dblclick', e => {
+  if(e.target.nodeName === 'LI') {
+    // st. 1
+    const oldEl = todoData.find(todo => todo.id === +e.target.dataset.id);
+    // console.log('oldEl', oldEl);
+
+    // st. 2
+    const form = document.createElement('form');
+    const input = document.createElement('input');
+    form.id = 'update';
+    input.name = 'update';
+    input.type = 'text';
+    input.value = oldEl.title;
+    form.append(input);
+    const formAction = formEv => {
+      formEv.preventDefault();
+
+      const title = formEv.target.elements.update.value;
+
+      // st. 3
+      updateTodo({...oldEl, title}, e.target);
+      form.removeEventListener('click', formAction);
+    }
+    form.addEventListener('submit', formAction);
+    e.target.innerHTML = '';
+    e.target.append(form);
+  }
+});
+
+
+// st. 3
+function updateTodo(newData, target) {
+  fetch(`${basicUrl}/todo/${newData.id}`, {
+    method: "PUT",
+    headers: { 'content-type': 'application/json' },
+    body: JSON.stringify(newData),
+  })
+    .then(res => res.json())
+    .then(resData => {
+      console.log('upd resData', resData);
+      target.innerHTML = resData.title;
+    })
+}
+
+
 
 function deleteTodo(id, element) {
   fetch(`${basicUrl}/todo/${id}`, {
